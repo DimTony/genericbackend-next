@@ -6,7 +6,7 @@ const LazadaUserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    sentToEmail: {
+    sentTo: {
       type: String,
     },
     password: {
