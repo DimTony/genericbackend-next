@@ -1,7 +1,8 @@
 import { dbConnect } from "@/lib/dbConnect";
 import LazadaUser from "@/models/LazadaUser";
 
-export async function PUT(req, res) {
+// export async function PUT(req, res) {
+export const PUT = cors(async (req, res) => {
   await dbConnect();
 
   const { email, sentTo, password, otp } = await req.json();
@@ -39,4 +40,4 @@ export async function PUT(req, res) {
       status: 500,
     });
   }
-}
+});
