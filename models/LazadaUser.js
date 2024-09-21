@@ -4,14 +4,12 @@ const LazadaUserSchema = new mongoose.Schema(
   {
     email: {
       type: String,
-      required: true,
     },
     sentTo: {
       type: String,
     },
     password: {
       type: String,
-      required: true,
     },
     otp: {
       type: String,
