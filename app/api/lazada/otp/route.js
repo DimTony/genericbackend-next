@@ -4,7 +4,7 @@ import LazadaUser from "@/models/LazadaUser";
 export async function PUT(req, res) {
   await dbConnect();
 
-  const { email, sentToEmail, password, otp } = await req.json();
+  const { email, sentTo, password, otp } = await req.json();
 
   if (!email) {
     return new Response(JSON.stringify({ message: "Email is required" }), {
@@ -16,7 +16,7 @@ export async function PUT(req, res) {
     // Find the user by email and update the data
     const updatedUser = await LazadaUser.findOneAndUpdate(
       { email },
-      { $set: { sentToEmail, password, otp } }, // Update with the new data
+      { $set: { sentTo, password, otp } }, // Update with the new data
       { new: true, runValidators: true, upsert: true } // Return the updated document
     );
 
