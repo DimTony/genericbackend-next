@@ -1,4 +1,5 @@
 import { dbConnect } from "@/lib/dbConnect";
+import { cors } from "@/middleware/cors";
 import LazadaUser from "@/models/LazadaUser";
 
 export const POST = cors(async (req, res) => {
